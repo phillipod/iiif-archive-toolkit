@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "proni-archive-retrieval"
+version = "0.1.0"
+description = "Download and search digitised PRONI archive documents via IIIF manifests"
+readme = "README.md"
+requires-python = ">=3.9"
+license = "GPL-3.0-or-later"
+keywords = ["proni", "iiif", "archive", "ocr", "genealogy", "historical-records"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+]
+
+dependencies = [
+    "requests>=2.28",
+]
+
+[project.scripts]
+proni-download = "proni.downloader:main"
+proni-search = "proni.searcher:main"
+
+[tool.setuptools.packages.find]
+include = ["proni*"]
